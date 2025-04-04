@@ -72,7 +72,6 @@
     {"name":"spr_Player_Walk_Left","order":7,"path":"sprites/spr_Player_Walk_Left/spr_Player_Walk_Left.yy",},
     {"name":"spr_Player_Walk_Right","order":5,"path":"sprites/spr_Player_Walk_Right/spr_Player_Walk_Right.yy",},
     {"name":"spr_Player_Walk_Up","order":3,"path":"sprites/spr_Player_Walk_Up/spr_Player_Walk_Up.yy",},
-    {"name":"spr_Player","order":3,"path":"sprites/spr_Player/spr_Player.yy",},
     {"name":"spr_Plot","order":14,"path":"sprites/spr_Plot/spr_Plot.yy",},
     {"name":"spr_Scythe","order":1,"path":"sprites/spr_Scythe/spr_Scythe.yy",},
     {"name":"spr_TextBox_Char","order":1,"path":"sprites/spr_TextBox_Char/spr_TextBox_Char.yy",},

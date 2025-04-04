@@ -99,7 +99,6 @@
     {"id":{"name":"spr_Player_Walk_Left","path":"sprites/spr_Player_Walk_Left/spr_Player_Walk_Left.yy",},},
     {"id":{"name":"spr_Player_Walk_Right","path":"sprites/spr_Player_Walk_Right/spr_Player_Walk_Right.yy",},},
     {"id":{"name":"spr_Player_Walk_Up","path":"sprites/spr_Player_Walk_Up/spr_Player_Walk_Up.yy",},},
-    {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
     {"id":{"name":"spr_Plot","path":"sprites/spr_Plot/spr_Plot.yy",},},
     {"id":{"name":"spr_Scythe","path":"sprites/spr_Scythe/spr_Scythe.yy",},},
     {"id":{"name":"spr_Small_Tree","path":"sprites/spr_Small_Tree/spr_Small_Tree.yy",},},

@@ -150,6 +150,7 @@ if (mouse_check_button_pressed(mb_left) and !InvOpen) {
 // Draw Dialogue
 
 if (instance_exists(obj_TextBox)) {
+    obj_Player.state = "stop";
     var kNext = keyboard_check_pressed(vk_space)
     
     // Handle Pages
@@ -161,6 +162,7 @@ if (instance_exists(obj_TextBox)) {
                 obj_TextBox.String = "";
             } else {
                 instance_destroy(obj_TextBox);
+                obj_Player.state = "move";
             }
         } else {
             obj_TextBox.CurrentChar = string_length(obj_TextBox.Text[obj_TextBox.Page]);
