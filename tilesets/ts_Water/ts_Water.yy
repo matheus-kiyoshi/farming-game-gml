@@ -27,7 +27,7 @@
     "path":"texturegroups/Default",
   },
   "tileAnimationFrames":[
-    {"$GMTileAnimation":"","%Name":"animation_1","frames":[1,2,3,4,],"name":"animation_1","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
+    {"$GMTileAnimation":"","%Name":"Water","frames":[1,2,3,4,],"name":"Water","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
   ],
   "tileAnimationSpeed":4.0,
   "tileHeight":16,

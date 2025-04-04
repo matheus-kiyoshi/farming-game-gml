@@ -31,3 +31,4 @@ y += vVel;
 */
 PlayerAnimations(hVel, vVel);
 
+depth = -y;

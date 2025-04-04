@@ -27,17 +27,10 @@ if (InvOpen) {
             // draw amount
             if (Inv[i][1] > 1) {
                 draw_set_halign(fa_right);
-                
-                // text outline
-                draw_set_color(c_black);
-                draw_text_transformed(xx + 14 - 1, yy + 3, string(Inv[i][1]), 0.65, 0.65, 0);
-                draw_text_transformed(xx + 14 + 1, yy + 3, string(Inv[i][1]), 0.65, 0.65, 0);
-                draw_text_transformed(xx + 14, yy + 3 - 1, string(Inv[i][1]), 0.65, 0.65, 0);
-                draw_text_transformed(xx + 14, yy + 3 + 1, string(Inv[i][1]), 0.65, 0.65, 0);
             
                 // main text
                 draw_set_color(c_white);
-                draw_text_transformed(xx + 14, yy + 3, string(Inv[i][1]), 0.65, 0.65, 0);
+                draw_text_transformed(xx + 14, yy + 3, string(Inv[i][1]), 1.2, 1.2, 0);
                 
                 draw_set_halign(fa_left);
             }
@@ -79,17 +72,10 @@ if (InvOpen) {
             // draw amount
             if (Inv[i][1] > 1) {
                 draw_set_halign(fa_right);
-                
-                // text outline
-                draw_set_color(c_black);
-                draw_text_transformed(xx + 14 - 1, yy + 3, string(Inv[i][1]), 0.65, 0.65, 0);
-                draw_text_transformed(xx + 14 + 1, yy + 3, string(Inv[i][1]), 0.65, 0.65, 0);
-                draw_text_transformed(xx + 14, yy + 3 - 1, string(Inv[i][1]), 0.65, 0.65, 0);
-                draw_text_transformed(xx + 14, yy + 3 + 1, string(Inv[i][1]), 0.65, 0.65, 0);
-            
+                            
                 // main text
                 draw_set_color(c_white);
-                draw_text_transformed(xx + 14, yy + 3, string(Inv[i][1]), 0.65, 0.65, 0);
+                draw_text_transformed(xx + 14, yy + 3, string(Inv[i][1]), 1.2, 1.2, 0);
                 
                 draw_set_halign(fa_left);
             }
@@ -129,7 +115,7 @@ if (mouse_check_button_pressed(mb_left) and !InvOpen) {
             case "Crop":
                 break;
             case "Tool":
-                var xx = round(mouse_x / 16) * 16;
+                var xx = round(mouse_x / 20) * 20;
                 var yy = round(mouse_y / 16) * 16;
             
                 if (!collision_rectangle(xx - 2, yy - 2, xx + 2, yy + 2, obj_Plot, 0, 1)) {
@@ -160,4 +146,66 @@ if (mouse_check_button_pressed(mb_left) and !InvOpen) {
         }
     }
 }
+
+// Draw Dialogue
+
+if (instance_exists(obj_TextBox)) {
+    var kNext = keyboard_check_pressed(vk_space)
+    
+    // Handle Pages
+    if kNext {
+        if (obj_TextBox.CurrentChar >= string_length(obj_TextBox.Text[obj_TextBox.Page])) {
+            if (obj_TextBox.Page < array_length(obj_TextBox.Text) - 1) {
+                obj_TextBox.Page++;
+                obj_TextBox.CurrentChar = 0;
+                obj_TextBox.String = "";
+            } else {
+                instance_destroy(obj_TextBox);
+            }
+        } else {
+            obj_TextBox.CurrentChar = string_length(obj_TextBox.Text[obj_TextBox.Page]);
+        }  
+    }
+    
+    // Handle Typewritter effect
+    if instance_exists(obj_TextBox) {
+       if (obj_TextBox.CurrentChar < string_length(obj_TextBox.Text[obj_TextBox.Page])) {
+           obj_TextBox.CurrentChar += obj_TextBox.TextSpeed * global.DT;
+       }
+    }
+    
+    // Reset string and Add new string +1 character each update
+    if instance_exists(obj_TextBox) {
+        if (string_length(obj_TextBox.String) < string_length(obj_TextBox.Text[obj_TextBox.Page])) {
+            for (var i = 0; i < obj_TextBox.CurrentChar + 1; i++) {
+                var Char = string_copy(obj_TextBox.Text[obj_TextBox.Page], 1, obj_TextBox.CurrentChar);
+                obj_TextBox.String = string(Char);
+            }
+        }
+    }
+    
+    // Draw TextBox
+    if instance_exists(obj_TextBox) {
+        obj_TextBox.Anim += 1 * global.DT;
+        draw_sprite_stretched(spr_TextBox_Neutral, obj_TextBox.Anim, obj_TextBox.TBX, obj_TextBox.TBY, obj_TextBox.TBoxWidth, obj_TextBox.TBoxHeight);
+        
+        draw_set_font(global.FontDialogue);
+        draw_text_ext(obj_TextBox.TBX + obj_TextBox.Border, obj_TextBox.TBY + obj_TextBox.Border, obj_TextBox.String, obj_TextBox.LinePadding, obj_TextBox.Width);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

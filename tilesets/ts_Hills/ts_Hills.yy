@@ -2,7 +2,7 @@
   "$GMTileSet":"v1",
   "%Name":"ts_Hills",
   "autoTileSets":[
-    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+    {"$GMAutoTileSet":"","%Name":"Hills","closed_edge":false,"name":"Hills","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
         14,31,30,33,18,22,54,35,19,55,10,34,21,46,47,57,13,29,17,53,2,6,7,9,15,20,32,56,26,43,42,45,16,38,1,
         5,3,8,27,44,25,41,4,37,28,39,40,
       ],},
