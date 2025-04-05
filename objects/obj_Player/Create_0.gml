@@ -1,8 +1,6 @@
-xDir = 0;
-yDir = 0;
-moveSpd = 1.2;
-xspd = 0;
-yspd = 0;
+mspd = 1.2;
+hspd = 0;
+vspd = 0;
 
 state = "move";
 

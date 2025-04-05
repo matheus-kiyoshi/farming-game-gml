@@ -4,7 +4,7 @@ LightninSurface = surface_create(room_width, room_height);
 
 Time = 0;
 TimeOfDay = 0;
-DayNightSpeed = .001;
+DayNightSpeed = .0001;
 
 // Colors
 R = 0;

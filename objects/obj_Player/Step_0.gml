@@ -1,4 +1,32 @@
 if (state == "move") {
+    //Controls
+    var kLeft = keyboard_check(ord("A"));
+    var kUp = keyboard_check(ord("W"));
+    var kDown = keyboard_check(ord("S"));
+    var kRight = keyboard_check(ord("D")); 
+    //Movement
+    var xDir = kRight - kLeft;
+    var yDir = kDown - kUp;
+    
+    var _inputDir = point_direction(0, 0, xDir, yDir);
+    var _inputMag = (xDir != 0) || (yDir != 0);
+
+    hspd = lengthdir_x(_inputMag * mspd, _inputDir);
+    vspd = lengthdir_y(_inputMag * mspd, _inputDir);
+    
+    //Scaling
+    image_xscale = clamp(image_xscale,1,3);
+    image_yscale = clamp(image_yscale,1,3);
+    
+    //Collisions
+    scr_collision();
+}
+
+PlayerAnimations(hspd, vspd);
+
+/*
+// p old movement
+if (state == "move") {
     var kLeft = keyboard_check(ord("A"));
     var kUp = keyboard_check(ord("W"));
     var kDown = keyboard_check(ord("S"));
@@ -34,7 +62,7 @@ if (state == "move") {
 
 PlayerAnimations(xspd, yspd);
 
-/* Old Movement
+// Old Movement
 // Input
 var kLeft = keyboard_check(ord("A"));
 var kUp = keyboard_check(ord("W"));
