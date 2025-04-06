@@ -3,7 +3,7 @@
   "%Name":"spr_Wooden_House_Roof_Tilset",
   "bboxMode":0,
   "bbox_bottom":79,
-  "bbox_left":10,
+  "bbox_left":0,
   "bbox_right":111,
   "bbox_top":0,
   "collisionKind":1,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":112,
+  "width":118,
 }

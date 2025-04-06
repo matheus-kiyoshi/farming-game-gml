@@ -5,6 +5,8 @@ var itemScale = 1.5;
 
 if (InvOpen) {
     // Inventory
+    draw_text(xDiff,y,xDiff)
+    draw_text(x, yDiff, yDiff)
     for (var i = 0; i < array_length(Inv); i++) {
         var xx = xDiff - 72 + (i mod InvWidth) * 36;
         var yy = yDiff - 40 + (i div InvWidth) * 38;
@@ -37,7 +39,7 @@ if (InvOpen) {
         }
         
         // Draw Hover
-        if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), xx-21, yy-22, xx+21, yy+22)) {
+        if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), xx-16, yy-18, xx+16, yy+18)) {
             draw_sprite_ext(spr_Inventory_Slot_Hover, 0, xx - slotSize/2, yy - slotSize/2, 1.05, 1.05, 0, c_white, 1);
             
             if (mouse_check_button_pressed(mb_left)) {
@@ -118,7 +120,10 @@ if (mouse_check_button_pressed(mb_left) and !InvOpen) {
                 var xx = round(mouse_x / 20) * 20;
                 var yy = round(mouse_y / 16) * 16;
             
-                if (!collision_rectangle(xx - 2, yy - 2, xx + 2, yy + 2, obj_Plot, 0, 1)) {
+                if (
+                    !collision_rectangle(xx - 2, yy - 2, xx + 2, yy + 2, obj_Plot, 0, 1) and 
+                    point_in_rectangle(xx, yy, obj_Player.x - 16, obj_Player.y - 16, obj_Player.x + 16, obj_Player.y + 16)
+                ) {
                     instance_create_depth(xx, yy, 0, obj_Plot);
                 }
             

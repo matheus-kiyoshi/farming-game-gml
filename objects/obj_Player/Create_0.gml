@@ -8,3 +8,8 @@ state = "move";
 // 0 - Up | 1 - Right | 2 - Down | 3 - Left
 Dir = 2;
 image_speed = .6;
+
+checkFirstX = x - 12;
+checkFirstY = y - 6;
+checkLastX = x;
+checkLastY = y;

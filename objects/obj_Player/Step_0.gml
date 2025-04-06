@@ -20,6 +20,48 @@ if (state == "move") {
     
     //Collisions
     scr_collision();
+    
+    // Interactions
+    if keyboard_check_pressed(ord("F")) {
+        switch(Dir) {
+            case 0:
+                //Olhando para cima
+                checkFirstX = x - 5;
+                checkFirstY = y - 13;
+                checkLastX = x + 5;
+                checkLastY = y - 2;
+                break;
+            case 1:
+                //Olhando para a direita
+                checkFirstX = x - 5;
+                checkFirstY = y + 6;
+                checkLastX = x + 5;
+                checkLastY = y - 8;
+                break;
+            case 2:
+                //Olhando para baixo 
+                checkFirstX = x + 13;
+                checkFirstY = y - 7;
+                checkLastX = x;
+                checkLastY = y - 1;
+                break;
+            case 3:
+                //Olhando para a esquerda
+                checkFirstX = x - 12;
+                checkFirstY = y - 7;
+                checkLastX = x;
+                checkLastY = y - 1;
+                break;
+        }
+        
+        var _interactable = collision_rectangle(checkFirstX, checkFirstY, checkLastX, checkLastY, obj_Interactable, false, true)
+        if (_interactable != noone) {
+            with (_interactable) {
+                //Interagir
+                interaction();
+            }
+        }
+    }
 }
 
 PlayerAnimations(hspd, vspd);

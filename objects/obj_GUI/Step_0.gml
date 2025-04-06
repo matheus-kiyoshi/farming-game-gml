@@ -9,13 +9,13 @@ else if (keyboard_check_pressed(ord("4"))) { HotBarSelect = 3; }
 else if (keyboard_check_pressed(ord("5"))) { HotBarSelect = 4; }
 
 // Scroll
-if mouse_wheel_up() {
+if mouse_wheel_up() and !keyboard_check(vk_lcontrol) {
     if (HotBarSelect > 0) {
         HotBarSelect--;
     } else {
         HotBarSelect = InvWidth - 1;
     }
-} else if mouse_wheel_down() {
+} else if mouse_wheel_down() and !keyboard_check(vk_lcontrol) {
     if (HotBarSelect < InvWidth - 1) {
         HotBarSelect++;
     } else {
